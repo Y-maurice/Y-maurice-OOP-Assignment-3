@@ -1,14 +1,14 @@
 ﻿using RefactoringLab;
 using RefactoringLab.Part01.src.Carriers;
+using RefactoringLab.Part01.src.Notifications;
 using RefactoringLab.Part01.src.OrderProccessor;
-using static RefactoringLab.Notification;
 
 var shipping = new ShippingCostCalculator(new ICarrier[]
 {
-    new AramexCarrier(), new DhlCarrier(), new FedExCarrier()   //providing existing carriers in the constructor
+    new AramexCarrier(), new DhlCarrier(), new FedExCarrier(), new UpsCarrier()   //providing existing carriers in the constructor
 });
 
-
+Console.WriteLine($"UPS 2kg → {shipping.Calculate("UPS", 2)}"); // new carrier
 Console.WriteLine($"Aramex 2kg → {shipping.Calculate("Aramex", 2)}");
 Console.WriteLine($"FedEx 2kg  → {shipping.Calculate("FedEx", 2)}");
 Console.WriteLine();
@@ -24,3 +24,5 @@ new Notification(new EmailChannel(), urgent: true, sendAt: DateTime.Today.AddHou
     .Send("customer@example.com", "Your order ships tomorrow");
 new Notification(new SmsChannel(), urgent: true)
     .Send("+201000000000", "OTP 4821");
+new Notification(new WhatsAppChannel(), urgent: true, sendAt: DateTime.Today.AddHours(18)) // new notification channel (whatsapp)
+    .Send("+201000000000", "Your order ships tomorrow");

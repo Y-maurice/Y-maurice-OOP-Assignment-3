@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RefactoringLab.Part01.src.Notifications;
 
-namespace RefactoringLab.Part01.src.Notifications
+public class WhatsAppChannel : INotificationChannel
 {
-    internal class WhatsappChannel
+    public void Send(string to, string message, DateTime? sendAt)
     {
+        string tag = sendAt.HasValue ? $"whatsapp scheduled {sendAt:g}" : "whatsapp";
+        Console.WriteLine($"[{tag}] {to}: {message}");
     }
 }

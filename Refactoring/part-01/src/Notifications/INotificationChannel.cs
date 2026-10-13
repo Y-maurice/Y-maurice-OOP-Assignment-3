@@ -1,4 +1,4 @@
-﻿namespace RefactoringLab.Part01.src;
+﻿namespace RefactoringLab.Part01.src.Notifications;
 
 public interface INotificationChannel
 {

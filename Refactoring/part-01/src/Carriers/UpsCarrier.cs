@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RefactoringLab.Part01.src.Carriers;
 
-namespace RefactoringLab.Part01.src.Carriers
+namespace RefactoringLab;
+
+public class UpsCarrier : ICarrier
 {
-    internal class UpsCarrier
-    {
-    }
+    public string Name => "UPS";
+    public decimal CalculateCost(decimal weightKg) => weightKg * 20m;
 }

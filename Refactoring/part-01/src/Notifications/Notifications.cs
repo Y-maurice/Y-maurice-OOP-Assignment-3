@@ -20,37 +20,6 @@ public class Notification
     }
 
 
-    public class EmailChannel : INotificationChannel
-    {
-        public void Send(string to, string message, DateTime? sendAt)
-        {
-            string tag = sendAt.HasValue ? $"email scheduled {sendAt:g}" : "email";
-            Console.WriteLine($"[{tag}] {to}: {message}");
-        }
-    }
-
-
-
-    public class SmsChannel : INotificationChannel
-    {
-        public void Send(string to, string message, DateTime? sendAt)
-        {
-            string tag = sendAt.HasValue ? $"sms scheduled {sendAt:g}" : "sms";
-            Console.WriteLine($"[{tag}] {to}: {message}");
-        }
-    }
-
-
-
-
-    public class WhatsAppChannel : INotificationChannel
-    {
-        public void Send(string to, string message, DateTime? sendAt)
-        {
-            string tag = sendAt.HasValue ? $"whatsapp scheduled {sendAt:g}" : "whatsapp";
-            Console.WriteLine($"[{tag}] {to}: {message}");
-        }
-    }
 
 }
 

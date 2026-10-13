@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RefactoringLab.Part01.src.Notifications;
 
-namespace RefactoringLab.Part01.src.Notifications
+public class EmailChannel : INotificationChannel
 {
-    internal class EmailChannel
+    public void Send(string to, string message, DateTime? sendAt)
     {
+        string tag = sendAt.HasValue ? $"email scheduled {sendAt:g}" : "email";
+        Console.WriteLine($"[{tag}] {to}: {message}");
     }
 }
