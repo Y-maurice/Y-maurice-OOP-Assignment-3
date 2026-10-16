@@ -1,6 +1,6 @@
 ﻿namespace Generics;
 
-public class Store<T>
+public class Store<T> where T : IHasId
 {
     private readonly List<T> _items = [];
 
@@ -19,7 +19,7 @@ public class Store<T>
                 return item;
         }
 
-        return null;
+        return default;
     }
 
     public IReadOnlyList<T> GetAll() => _items;
