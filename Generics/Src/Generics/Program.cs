@@ -18,7 +18,7 @@ var course = courses.GetById(20);
 Console.WriteLine($"Student 3: {student?.Name}");
 Console.WriteLine($"Course 20: {course?.Title}");
 
-// Duplicate id: catch the exception and print its message
+// Duplicate id, catch the exception 
 try
 {
     students.Add(new Student { Id = 3, Name = "Duplicate" });
