@@ -1,4 +1,4 @@
-﻿## Step 2: What is the same between the two stores, and what is different?
+## Step 2: What is the same between the two stores, and what is different?
 
 ### Same
 - Both stores have the same four methods: `Add`, `GetById`, `GetAll`, and `Remove`.
